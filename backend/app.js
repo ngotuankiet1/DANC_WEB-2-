@@ -13,7 +13,7 @@ app.use(express.urlencoded({ limit: "50mb", extended: true }));
 app.use(fileUpload({useTempFiles: true}));
 
 // config
-if(process.env.NODE_ENV!=="PRODUCTION"){
+if(process.env.NODE_ENV!=="production"){
     require("dotenv").config({
         path:"backend/config/.env"
     })}
@@ -35,11 +35,11 @@ app.use("/api/v2",payment);
 
 app.use("/api/v2",cart);
 
-app.use(express.static("frontend/build"));
+app.use(express.static(path.join(__dirname,"../frontend/build")));
 
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
-});
+app.get("*",(req,res) =>{
+    res.sendFile(path.resolve(__dirname,"../frontend/build/index.html"));
+})
 
 // it's for errorHandeling
 app.use(ErrorHandler);
