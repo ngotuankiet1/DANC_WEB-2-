@@ -9,7 +9,7 @@ process.on("uncaughtException",(err) =>{
 })
 
 // config
-if(process.env.NODE_ENV!=="PRODUCTION"){
+if(process.env.NODE_ENV!=="production"){
 require("dotenv").config({
     path:"backend/config/.env"
 })}
@@ -23,9 +23,8 @@ cloudinary.config({
 })
 
 // create server
-const port = process.env.PORT || 5000;
-const server = app.listen(port,() =>{
-    console.log(`Server is working on http://localhost:${port}`)
+const server = app.listen(process.env.PORT,() =>{
+    console.log(`Server is working on http://localhost:${process.env.PORT}`)
 })
 
 
