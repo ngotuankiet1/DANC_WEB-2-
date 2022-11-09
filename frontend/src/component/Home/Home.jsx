@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import "./Home.css";
 import Carousel from "react-material-ui-carousel";
-import bg from "../../Assets/background.jpg";
-import bg2 from "../../Assets/background2.jpg";
+import bg from "../../Assets/food1.jpg";
+import bg2 from "../../Assets/food3.jpg";
 import ProductCard from "../Products/ProductCard";
 import  {useDispatch, useSelector} from "react-redux"
 import { clearErrors, getProduct } from "../../actions/ProductActions";
