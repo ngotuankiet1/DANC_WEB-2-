@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const cartSchema = new mongoose.Schema({
-  productName: {
+  product: {
     type: String,
     required: [true, "Please enter your product name"],
   },
