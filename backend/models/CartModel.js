@@ -1,15 +1,15 @@
 const mongoose = require("mongoose");
 
 const cartSchema = new mongoose.Schema({
-  name: {
+  productName: {
     type: String,
     required: [true, "Please enter your product name"],
   },
-  price: {
+  productPrice: {
     type: Number,
     required: [true, "Please enter your product price"],
   },
-  image: {
+  productImage: {
     type: String,
     required: [true, "Please enter your product image"],
   },
@@ -21,7 +21,7 @@ const cartSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please enter your user id"],
   },
-  product: {
+  productId: {
     type: String,
     required: [true, "Please enter your user id"],
   },
