@@ -9,7 +9,7 @@ const cartSchema = new mongoose.Schema({
     type: Number,
     required: [true, "Please enter your product price"],
   },
-  images: {
+  image: {
     type: String,
     required: [true, "Please enter your product image"],
   },
