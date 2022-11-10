@@ -101,13 +101,13 @@ const MyOrderDetails = ({ match }) => {
                 {order.orderItems &&
                   order.orderItems.map((item) => (
                     <div key={item.Offer}>
-                      <img src={item.image} alt="Product" />
+                      <img src={item.productImage} alt="Product" />
                       <Link to={`/product/${item.Offer}`}>
-                        {item.name}
+                        {item.productName}
                       </Link>{" "}
                       <span>
-                        {item.quantity} X ${item.price} ={" "}
-                        <b>${item.price * item.quantity}</b>
+                        {item.quantity} X ${item.productPrice} ={" "}
+                        <b>${item.productPrice * item.quantity}</b>
                       </span>
                     </div>
                   ))}

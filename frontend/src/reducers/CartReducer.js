@@ -13,14 +13,14 @@ import {
         const item = action.payload;
      
         const isItemExist = state.cartItems.find(
-          (i) => i.product === item.product
+          (i) => i.productId === item.productId
         );
 
         if (isItemExist) {
           return {
             ...state,
             cartItems: state.cartItems.map((i) =>
-              i.product === isItemExist.product ? item : i
+              i.productId === isItemExist.productId ? item : i
             ),
           };
         } else {
@@ -33,7 +33,7 @@ import {
       case REMOVE_CART_ITEM:
         return {
           ...state,
-          cartItems: state.cartItems.filter((i) => i.product !== action.payload),
+          cartItems: state.cartItems.filter((i) => i.productId !== action.payload),
         };
   
       case SAVE_SHIPPING_INFO:

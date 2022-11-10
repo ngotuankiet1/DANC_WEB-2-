@@ -126,14 +126,14 @@ const UpdateOrder = ({ history, match }) => {
                   <div className="confirmCartItemsContainer">
                     {order.orderItems &&
                       order.orderItems.map((item) => (
-                        <div key={item.product}>
-                          <img src={item.image} alt="Product" />
+                        <div key={item.productId}>
+                          <img src={item.productImage} alt="Product" />
                           <Link to={`/product/${item.product}`}>
-                            {item.name}
+                            {item.productName}
                           </Link>{" "}
                           <span>
-                            {item.quantity} X ${item.price} ={" "}
-                            <b>${item.price * item.quantity}</b>
+                            {item.quantity} X ${item.productPrice} ={" "}
+                            <b>${item.productPrice * item.quantity}</b>
                           </span>
                         </div>
                       ))}

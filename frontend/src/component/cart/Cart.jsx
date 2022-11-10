@@ -16,7 +16,7 @@ const Cart = ({ history }) => {
   const { cartItems } = useSelector((state) => state.cart);
 
   let Price = cartItems.reduce(
-    (acc, item) => acc + item.quantity * item.price,
+    (acc, item) => acc + item.quantity * item.productPrice,
     0
   );
 
@@ -66,12 +66,12 @@ const Cart = ({ history }) => {
 
             {cartItems &&
               cartItems.map((item) => (
-                <div className="cartContainer" key={item.product}>
+                <div className="cartContainer" key={item.productId}>
                   <CartItemCard item={item} deleteCartItems={deleteCartItems} />
                   <div className="cartInput">
                     <button
                       onClick={() =>
-                        decreaseQuantity(item.product, item.quantity)
+                        decreaseQuantity(item.productId, item.quantity)
                       }
                     >
                       -
@@ -80,7 +80,7 @@ const Cart = ({ history }) => {
                     <button
                       onClick={() =>
                         increaseQuantity(
-                          item.product,
+                          item.productId,
                           item.quantity,
                           item.stock
                         )
@@ -90,7 +90,7 @@ const Cart = ({ history }) => {
                     </button>
                   </div>
                   <p className="cartSubtotal">{`$${
-                    item.price * item.quantity
+                    item.productPrice * item.quantity
                   }`}</p>
                 </div>
               ))}
